@@ -64,7 +64,7 @@ class LoginController extends Controller
     // Facebook callback
     public function handleFacebookCallback()
     {
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::driver('facebook')->stateless()->user();
 
         $this->_registerOrLoginUser($user);
 
@@ -81,7 +81,7 @@ class LoginController extends Controller
     // Github callback
     public function handleGithubCallback()
     {
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver('github')->stateless()->user();
 
         $this->_registerOrLoginUser($user);
 

@@ -89,6 +89,27 @@ class LoginController extends Controller
         return redirect()->route('home');
     }
 
+
+    //linkedin login
+    public function redirectToLinkedin()
+    {
+        return Socialite::driver('linkedin')->redirect();
+    }
+
+    //linkedin callback
+    public function handleLinkedinCallback()
+    {
+        $user = Socialite::driver('linkedin')->stateless()->user();
+
+        $this->_registerOrLoginUser($user);
+
+        // Return home after login
+        return redirect()->route('home');
+    }
+
+
+
+
     protected function _registerOrLoginUser($data)
     {
         //if user not found in database

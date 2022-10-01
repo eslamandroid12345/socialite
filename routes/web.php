@@ -40,3 +40,7 @@ Route::get('login/facebook/callback', [LoginController::class,'handleFacebookCal
 //login with git
 Route::get('login/github', [LoginController::class,'redirectToGithub'])->name('login.github');
 Route::get('login/github/callback', [LoginController::class,'handleGithubCallback']);
+
+//login with linkedin
+Route::get('login/linkedin', [LoginController::class,'redirectToLinkedin'])->name('login.linkedin');
+Route::get('login/linkedin/callback', [LoginController::class,'handleLinkedinCallback']);

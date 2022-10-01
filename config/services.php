@@ -52,4 +52,10 @@ return [
         'redirect' => 'http://localhost/socialite/public/login/github/callback',
     ],
 
+    'linkedin' => [
+        'client_id' => env('LINKEDIN_CLIENT_ID'),
+        'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
+        'redirect' => 'http://localhost/socialite/public/login/linkedin/callback',
+    ],
+
 ];

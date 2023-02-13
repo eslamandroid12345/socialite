@@ -108,18 +108,16 @@ class LoginController extends Controller
     }
 
 
-
-
     protected function _registerOrLoginUser($data)
     {
         //if user not found in database
         $user = User::where('email', '=', $data->email)->first();
         if (!$user) {
             $user = new User();
-            $user->name = $data->name ? $data->name : 'user';
-            $user->email = $data->email;
-            $user->provider_id = $data->id;
-            $user->avatar = $data->avatar;
+            $user->provider_name = $data->getName();
+            $user->email = $data->getEmail();
+            $user->provider_id = $data->getId();
+            $user->avatar = $data->getAvatar();
             $user->save();
         }
 

@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                        <img src="{{Auth::user()->avatar}}" alt="{{ Auth::user()->name ?? Auth::user()->provider_name}}">
                 </div>
             </div>
         </div>
